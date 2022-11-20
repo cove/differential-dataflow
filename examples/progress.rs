@@ -48,7 +48,7 @@ fn main() {
         });
 
         // A PageRank-like graph, as represented here:
-        //  https://github.com/TimelyDataflow/diagnostics/blob/master/examples/pagerank.png
+        //  https://github.com/cove/diagnostics/blob/master/examples/pagerank.png
         nodes.insert((Target::new(2, 0), Source::new(2, 0), 1));
         nodes.insert((Target::new(3, 0), Source::new(3, 0), 0));
         nodes.insert((Target::new(3, 1), Source::new(3, 0), 0));

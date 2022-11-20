@@ -9,5 +9,5 @@ serde = "1"
 serde_derive = "1"
 differential-dataflow = { path = "../" }
 dogsdogsdogs = { path = "../dogsdogsdogs" }
-timely = { git = "https://github.com/TimelyDataflow/timely-dataflow", features = ["bincode"] }
+timely = { git = "https://github.com/cove/timely-dataflow", features = ["bincode"] }
 #timely = { path = "../../timely-dataflow/timely", features = ["bincode"] }

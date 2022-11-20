@@ -1,11 +1,11 @@
 # Differential Dataflow
-An implementation of [differential dataflow](https://github.com/timelydataflow/differential-dataflow/blob/master/differentialdataflow.pdf) over [timely dataflow](https://github.com/timelydataflow/timely-dataflow) on [Rust](http://www.rust-lang.org).
+An implementation of [differential dataflow](https://github.com/cove/differential-dataflow/blob/master/differentialdataflow.pdf) over [timely dataflow](https://github.com/cove/timely-dataflow) on [Rust](http://www.rust-lang.org).
 
 ## Background
 
 Differential dataflow is a data-parallel programming framework designed to efficiently process large volumes of data and to quickly respond to arbitrary changes in input collections. You can read more in the [differential dataflow mdbook](https://timelydataflow.github.io/differential-dataflow/) and in the [differential dataflow documentation](https://docs.rs/differential-dataflow/).
 
-Differential dataflow programs are written as functional transformations of collections of data, using familiar operators like `map`, `filter`, `join`, and `reduce`. Differential dataflow also includes more exotic operators such as `iterate`, which repeatedly applies a differential dataflow fragment to a collection. The programs are compiled down to [timely dataflow](https://github.com/timelydataflow/timely-dataflow) computations.
+Differential dataflow programs are written as functional transformations of collections of data, using familiar operators like `map`, `filter`, `join`, and `reduce`. Differential dataflow also includes more exotic operators such as `iterate`, which repeatedly applies a differential dataflow fragment to a collection. The programs are compiled down to [timely dataflow](https://github.com/cove/timely-dataflow) computations.
 
 For example, here is a differential dataflow fragment to compute the out-degree distribution of a directed graph (for each degree, the number of nodes with that many outgoing edges):
 
@@ -38,7 +38,7 @@ Be sure to check out the [differential dataflow documentation](https://docs.rs/d
 
 ## An example: counting degrees in a graph.
 
-Let's check out that out-degree distribution computation, to get a sense for how differential dataflow actually works. This example is [examples/hello.rs](https://github.com/TimelyDataflow/differential-dataflow/blob/master/examples/hello.rs) in this repository, if you'd like to follow along.
+Let's check out that out-degree distribution computation, to get a sense for how differential dataflow actually works. This example is [examples/hello.rs](https://github.com/cove/differential-dataflow/blob/master/examples/hello.rs) in this repository, if you'd like to follow along.
 
 A graph is a collection of pairs `(Node, Node)`, and one standard analysis is to determine the number of times each `Node` occurs in the first position, its "degree". The number of nodes with each degree is a helpful graph statistic.
 
@@ -67,7 +67,7 @@ let (mut input, probe) = worker.dataflow(|scope| {
 });
 ```
 
-The `input` and `probe` we return are how we get data into the dataflow, and how we notice when some amount of computation is complete. These are timely dataflow idioms, and we won't get in to them in more detail here (check out [the timely dataflow repository](https://github.com/timelydataflow/timely-dataflow)).
+The `input` and `probe` we return are how we get data into the dataflow, and how we notice when some amount of computation is complete. These are timely dataflow idioms, and we won't get in to them in more detail here (check out [the timely dataflow repository](https://github.com/cove/timely-dataflow)).
 
 If we feed this computation with some random graph data, say fifty random edges among ten nodes, we get output like
 
@@ -218,7 +218,7 @@ This averages to about five microseconds on average; a fair bit faster than the 
 
 ### Scaling out
 
-Differential dataflow is built on top of [timely dataflow](https://github.com/timelydataflow/timely-dataflow), a distributed data-parallel runtime. Timely dataflow scales out to multiple independent workers, increasing the capacity of the system (at the cost of some coordination that cuts into latency).
+Differential dataflow is built on top of [timely dataflow](https://github.com/cove/timely-dataflow), a distributed data-parallel runtime. Timely dataflow scales out to multiple independent workers, increasing the capacity of the system (at the cost of some coordination that cuts into latency).
 
 If we bring two workers to bear, our 10 million node, 50 million edge computation drops down from fifteen seconds to just over eight seconds.
 
@@ -378,7 +378,7 @@ I think this is all great, both that it works at all and that it even seems to w
 
 ## Roadmap
 
-The [issue tracker](https://github.com/timelydataflow/differential-dataflow/issues) has several open issues relating to current performance defects or missing features. If you are interested in contributing, that would be great! If you have other questions, don't hesitate to get in touch.
+The [issue tracker](https://github.com/cove/differential-dataflow/issues) has several open issues relating to current performance defects or missing features. If you are interested in contributing, that would be great! If you have other questions, don't hesitate to get in touch.
 
 ## Acknowledgements
 

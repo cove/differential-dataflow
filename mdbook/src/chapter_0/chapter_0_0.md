@@ -25,13 +25,13 @@ Instead, edit your `Cargo.toml` file, which tells Rust about your dependencies, 
         differential-dataflow = "0.11.0"
         Echidnatron%
 
-You should only need to add those last two lines there, which bring in dependencies on both [timely dataflow](https://github.com/TimelyDataflow/timely-dataflow) and [differential dataflow](https://github.com/TimelyDataflow/differential-dataflow). We will be using both of those.
+You should only need to add those last two lines there, which bring in dependencies on both [timely dataflow](https://github.com/cove/timely-dataflow) and [differential dataflow](https://github.com/cove/differential-dataflow). We will be using both of those.
 
 If you would like to point at the most current code release, hosted on github, you can replace the dependencies with:
 
         [dependencies]
-        timely = { git = "https://github.com/TimelyDataflow/timely-dataflow" }
-        differential-dataflow = { git = "https://github.com/TimelyDataflow/differential-dataflow" }
+        timely = { git = "https://github.com/cove/timely-dataflow" }
+        differential-dataflow = { git = "https://github.com/cove/differential-dataflow" }
 
 
-You should now be ready to go. Code examples should mostly work, and you should complain (or [file an issue](https://github.com/TimelyDataflow/differential-dataflow/issues)) if they do not!
+You should now be ready to go. Code examples should mostly work, and you should complain (or [file an issue](https://github.com/cove/differential-dataflow/issues)) if they do not!

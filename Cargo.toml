@@ -8,8 +8,8 @@ description = "An incremental data-parallel dataflow platform"
 
 # These URLs point to more information about the repository
 documentation = "https://docs.rs/differential-dataflow"
-homepage = "https://github.com/TimelyDataflow/differential-dataflow"
-repository = "https://github.com/TimelyDataflow/differential-dataflow.git"
+homepage = "https://github.com/cove/differential-dataflow"
+repository = "https://github.com/cove/differential-dataflow.git"
 keywords = ["differential", "dataflow"]
 license = "MIT"
 readme = "README.md"
@@ -33,7 +33,7 @@ serde_derive = "1.0"
 abomonation = "0.7"
 abomonation_derive = "0.5"
 #timely = { version = "0.12", default-features = false }
-timely = { git = "https://github.com/TimelyDataflow/timely-dataflow", default-features = false }
+timely = { git = "https://github.com/cove/timely-dataflow", default-features = false }
 #timely = { path = "../timely-dataflow/timely/", default-features = false }
 fnv="1.0.2"
 
